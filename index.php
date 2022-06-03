@@ -23,6 +23,7 @@ if (in_array($page . '.func.php', $pages_functions)) {
 <html>
 
 <head>
+    
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -40,6 +41,8 @@ if (in_array($page . '.func.php', $pages_functions)) {
 </head>
 
 <body>
+
+    
     <?php
     include 'body/topbar.php';
     ?>
