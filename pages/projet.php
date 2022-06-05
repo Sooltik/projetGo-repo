@@ -1,4 +1,5 @@
 <h2>Les différents projets....</h2>
+<hr style="margin: auto; width: 350px;">
 
 <?php
 
@@ -20,5 +21,7 @@ foreach ($posts as $post) {
             </div>
         </div>
     </div>
+    <hr>
 <?php
+
 }

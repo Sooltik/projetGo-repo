@@ -19,3 +19,6 @@ if ($post == false) {
         </p>
     <?php
 }
+    ?>
+    <hr>
+    
