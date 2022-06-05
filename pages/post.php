@@ -8,7 +8,6 @@ if ($post == false) {
     </div>
     <div class="parallax-container">
         <div class="parallax">
-
             <img src="img/posts/<?= $post->image; ?>" alt="<?= $post->title; ?>" />
         </div>
     </div>
