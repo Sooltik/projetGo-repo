@@ -1,4 +1,4 @@
-<h1>Page d'accueil</h1>
+<h1>Projet récent.....</h1>
 <div class="row">
 
     <?php
@@ -28,7 +28,7 @@
                         <?= $post->title ?> <i class="material-icons right">close</i>
                     </span>
                     <p>
-                        <?= substr(nl2br($post->content), 0, 1000);  ?>....
+                        <?= substr(nl2br($post->content), 0, 500);  ?>....
                     </p>
                 </div>
             </div>
