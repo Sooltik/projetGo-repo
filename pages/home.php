@@ -20,7 +20,7 @@
                         <i class="material-icons  right">more_vert</i>
                     </span>
                     <p>
-                        <a href="index.php?page=post&id=<?= $post->id ?>">Voir un bref détail du projet...</a>
+                        <a href="index.php?page=post&id=<?= $post->id ?>">Voir détail du projet...</a>
                     </p>
                 </div>
                 <div class="card-reveal">

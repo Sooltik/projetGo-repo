@@ -6,9 +6,9 @@ if ($post == false) {
 } else {
 ?>
     </div>
-    <div class="parallax-container" style="height: 340px;">
+    <div class="parallax-container" style="height: 200px;">
         <div class="parallax">
-            <img src="img/posts/<?= $post->image; ?>" alt="<?= $post->title; ?>" style=" transform: translate3d(-50%, 432.451px, 0px);opacity: 1;" />
+            <img src="img/posts/<?= $post->image; ?>" alt="<?= $post->title; ?>" style=" transform: translate3d(-50%, 432.451px, 0px);opacity: 0.5;" />
         </div>
     </div>
     <div class="container">
@@ -21,4 +21,3 @@ if ($post == false) {
 }
     ?>
     <hr>
-    
