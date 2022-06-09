@@ -1,4 +1,4 @@
-<nav class="light-orange">
+<nav class="light-green">
 
     <div class="container">
 
