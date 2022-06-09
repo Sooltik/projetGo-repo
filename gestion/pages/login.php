@@ -8,6 +8,23 @@
             </div>
 
             <h4 class="center-align">Se connecter</h4>
+
+            <?php
+            //Vérifier si les deux champs existent
+            if (isset($_POST['submit'])) {
+
+                //sécuriser les deux champs lors de la saisie de l'utilisateur
+                $email = htmlspecialchars(trim($_POST['email']));
+                $password = htmlspecialchars(trim($_POST['password']));
+
+                //Vérifier si les deux champs sont vide ou non
+                $errors = [];
+                if (empty($email) || empty($password)) {
+                    $errors['empty'] = "Remplir tous les champs ... !";
+                }else if(administrateur_existe($email, $password);
+            }
+            ?>
+
             <form method="POST">
                 <div class="row">
                     <div class="input-field col s12">
