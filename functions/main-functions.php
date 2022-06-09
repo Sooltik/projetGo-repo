@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $dbhost = 'localhost';
 $dbname = 'projet';
 $dbuser = 'root';

@@ -1,6 +1,9 @@
 <nav class="light-orange">
+
     <div class="container">
+
         <div class="nav-wrapper">
+
             <a href="index.php?page=home" class="brand-logo" style="font-size: 35px; font-weight:bold">GoFundMe-ProjetGo | Administration</a>
 
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
