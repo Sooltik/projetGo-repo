@@ -4,7 +4,7 @@
 
         <div class="nav-wrapper">
 
-            <a href="index.php?page=home" class="brand-logo" style="font-size: 35px; font-weight:bold">GoFundMe-ProjetGo | Administration</a>
+            <a href="../index.php?page=home" class="brand-logo" style="font-size: 35px; font-weight:bold">Administration | Connexion ...</a>
 
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">

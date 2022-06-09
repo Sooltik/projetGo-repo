@@ -1,5 +1,6 @@
 <?php
 
+//démarrer la session
 session_start();
 
 $dbhost = 'localhost';

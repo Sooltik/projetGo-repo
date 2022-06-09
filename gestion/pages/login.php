@@ -1,3 +1,12 @@
+<?php
+//si la session est déja ouverte
+if (isset($_SESSION['admin'])) {
+    //rediriger vers la page d'administration
+    header("Location:index.php?page=gestion");
+}
+?>
+
+
 <div class="row">
     <div class="col l4 m6 s12 offset-l4 offset-m3">
         <div class="card-panel">
@@ -21,7 +30,32 @@
                 $errors = [];
                 if (empty($email) || empty($password)) {
                     $errors['empty'] = "Remplir tous les champs ... !";
-                }else if(administrateur_existe($email, $password);
+
+                    //Si administrateur n'existe pas
+                } else if (administrateur_existe($email, $password) == 0) {
+                    $errors['existe'] = "Cet administrateur n'existe pas";
+                }
+
+                //Vérifier si le tableau errors n'est pas vide, s'il n'est pas vide affiche les erreurs
+                if (!empty($errors)) {
+            ?>
+                    <div class="card red">
+                        <div class="card-content white-text">
+                            <?php
+                            foreach ($errors as $error) {
+                                echo $error . "<br />";
+                            }
+                            ?>
+                        </div>
+                    </div>
+            <?php
+                } else {
+                    //Créer une session pour l'administrateur connécté
+                    $_SESSION['admin'] = $email;
+
+                    //rediriger l'administrateur connecté a la page d'administration
+                    header("Location:index.php?page=gestion");
+                }
             }
             ?>
 

@@ -4,7 +4,7 @@ function administrateur_existe($email, $password)
     global $db;
     $entrees = [
         'email' => $email,
-        'password' => $password
+        'password' => sha1($password)
     ];
 
     //Créer la requête sql
