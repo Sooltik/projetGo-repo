@@ -1,4 +1,4 @@
-<h1>Projets récent.....</h1>
+<h4>Projets récent.....</h4>
 <div class="row">
 
     <?php

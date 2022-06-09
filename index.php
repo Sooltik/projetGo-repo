@@ -70,6 +70,12 @@ if (in_array($page . '.func.php', $pages_functions)) {
     }
     ?>
 
+    <footer class="page-footer" style="height:130px ;">
+        <div class="container" style="text-align:center ;">
+            © 2022 Copyright projet GofundMe and ProjetGo
+        </div>
+    </footer>
+
 
 </body>
 
