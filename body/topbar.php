@@ -29,6 +29,11 @@
       <ul class="side-nav" id="mobile-menu">
         <li class="<?php echo ($page == "home") ? "active" : ""; ?>"><a href="index.php?page=home">Home</a></li>
         <li class="<?php echo ($page == "projet") ? "active" : ""; ?>"><a href="index.php?page=projet">Projets</a></li>
+        <li class="<?php echo ($page == "login") ? "active" : ""; ?>">
+          <a href="gestion/index.php?page=login" style="font-size: 25px; font-weight:bold">
+
+        </li>Connexion</a>
+        </li>
       </ul>
 
     </div>
