@@ -35,4 +35,37 @@
     ?>
 </div>
 
-<h4></h4>
+<?php
+/*
+    On fait appelle à la fonction qui récupere les projets
+*/
+$projets = getProjets();
+?>
+
+<!--Afficher les projets dans la table-->
+<table>
+    <thead>
+        <tr>
+            <th>Projet</th>
+            <th>Date publication</th>
+            <th>Propriétaire</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        /*
+            On parcour le tableau projets ($projets)
+        */
+        foreach ($projets as $projet) {
+        ?>
+            <tr>
+                <td><?= $projet->title ?></td>
+                <td><?= date("d/m/Y à H:i", strtotime($projet->date)); ?></td>
+                <td><?= $projet->name ?></td>
+            </tr>
+        <?php
+        }
+        ?>
+    </tbody>
+</table>
