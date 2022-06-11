@@ -67,6 +67,20 @@ $projets = getProjets();
                     <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light green see_projet"><i class="material-icons">done</i></a>
                     <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light red delete_projet"><i class="material-icons">delete</i></a>
                     <a href="#projet_<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light blue modal-trigger"><i class="material-icons">more_vert</i></a>
+
+                    <!--Créer et afficher la modal-->
+                    <div class="modal" id="projet_<?= $projet->id ?>">
+                        <div class="modal-content">
+                            <!--Titre du projet-->
+                            <h4><?= $projet->title; ?></h4>
+                            <!--Celui qui a ajouté le projet-->
+                            <p>
+                                Projet ajouté par <?= $projet->name . " (" . $projet->writer . ")</strong><br/>Le " . date("d/m/Y à H:i", strtotime($projet->date)) ?> </p>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
                 </td>
             </tr>
         <?php
