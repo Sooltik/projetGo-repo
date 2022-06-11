@@ -48,7 +48,7 @@ $projets = getProjets();
         <tr>
             <th>Projet</th>
             <th>Date publication</th>
-            <th>Propriétaire</th>
+            <th>Auteur</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -82,8 +82,11 @@ $projets = getProjets();
                                 <?= substr(nl2br($projet->content), 0, 850) ?> ....
                             </p>
                         </div>
+                        <!--Le footer de la fenetre modal-->
                         <div class="modal-footer">
+                            <a href="#" id="<?= $projet->id; ?>" class="modal-action modal-close waves-effect waves-green btn-flat see_projet"><i class="material-icons">done</i></a>
 
+                            <a href="#" id="<?= $projet->id; ?>" class="modal-action modal-close waves-effect waves-red btn-flat delete_projet"><i class="material-icons">delete</i></a>
                         </div>
                     </div>
                 </td>

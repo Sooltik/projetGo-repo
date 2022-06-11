@@ -43,6 +43,7 @@ function getProjets()
         FROM posts
         JOIN admins
         ON posts.writer=admins.email
+        WHERE posts.posted='0'
         ORDER BY posts.date ASC    
     ");
 
