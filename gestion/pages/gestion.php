@@ -59,10 +59,15 @@ $projets = getProjets();
         */
         foreach ($projets as $projet) {
         ?>
-            <tr>
+            <tr id="post_<?= $projet->id ?>">
                 <td><?= $projet->title ?></td>
                 <td><?= date("d/m/Y à H:i", strtotime($projet->date)); ?></td>
                 <td><?= $projet->name ?></td>
+                <td>
+                    <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light green see_projet"><i class="material-icons">done</i></a>
+                    <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light red delete_projet"><i class="material-icons">delete</i></a>
+                    <a href="#projet_<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light blue modal-trigger"><i class="material-icons">more_vert</i></a>
+                </td>
             </tr>
         <?php
         }
