@@ -79,7 +79,7 @@ $projets = getProjets();
                             </p>
                             <hr />
                             <p>
-                                <?= nl2br($projet->content) ?>
+                                <?= substr(nl2br($projet->content), 0, 850) ?> ....
                             </p>
                         </div>
                         <div class="modal-footer">
