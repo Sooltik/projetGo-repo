@@ -75,7 +75,12 @@ $projets = getProjets();
                             <h4><?= $projet->title; ?></h4>
                             <!--Celui qui a ajouté le projet-->
                             <p>
-                                Projet ajouté par <?= $projet->name . " (" . $projet->writer . ")</strong><br/>Le " . date("d/m/Y à H:i", strtotime($projet->date)) ?> </p>
+                                Projet ajouté par <?= $projet->name . " (" . $projet->writer . ")</strong><br/>Le " . date("d/m/Y à H:i", strtotime($projet->date)) ?>
+                            </p>
+                            <hr />
+                            <p>
+                                <?= nl2br($projet->content) ?>
+                            </p>
                         </div>
                         <div class="modal-footer">
 
@@ -88,3 +93,8 @@ $projets = getProjets();
         ?>
     </tbody>
 </table>
+
+<p>
+
+
+</p>

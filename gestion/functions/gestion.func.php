@@ -38,6 +38,7 @@ function getProjets()
             posts.title,
             posts.date,
             posts.writer,
+            posts.content,
             admins.name
         FROM posts
         JOIN admins
