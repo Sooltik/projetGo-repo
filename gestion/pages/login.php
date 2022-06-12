@@ -70,8 +70,9 @@ if (isset($_SESSION['admin'])) {
 
                     </div>
                     <div class="input-field col s12">
+                        <i class="material-icons">lock</i>
                         <input type="password" id="password" name="password" />
-                        <label for="password">Votre mot de passe</label>
+                        <label for="password" style="margin-left: 30px;">Votre mot de passe</label>
                     </div>
                 </div>
                 <!--

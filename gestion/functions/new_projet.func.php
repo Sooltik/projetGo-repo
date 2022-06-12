@@ -22,16 +22,21 @@ function post($title, $content, $posted)
     //Executer la requête
     $req->execute($tab);
 }
+
+//Fonction qui permet l'upload de l'image
 function poste_img($tmp_name, $extension)
 {
+    //connexion à la base de données
     global $db;
-    $id = $db->lastInsertId();
 
+    //utiliser le id pour le nom de l'image
+    $id = $db->lastInsertId();
     $i = [
         'id' => $id,
         'image' => $id . $extension
     ];
 
+    //Mise à jour de la table
     $sql = "UPDATE posts SET image = :image WHERE id= :id";
     $req = $db->prepare($sql);
     $req->execute($i);

@@ -63,7 +63,13 @@ if (isset($_POST['post'])) {
         </div>
 <?php
     } else {  //S'il n y a pas d'erreur
+        /*  
+            Appelle à la fonction qui rajoute le titre, le contenu 
+            et qui détermine si le pjrojet soit publié ou non
+        */
         post($title, $content, $posted);
+
+        //Ajouter une condition si l'image existe
         if (!empty($_FILES['image']['name'])) {
             poste_img($_FILES['image']['tmp_name'], $extension);
         } else {
