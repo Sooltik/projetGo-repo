@@ -10,6 +10,8 @@
             <ul class="right hide-on-med-and-down">
                 <li class="<?php echo ($page == "gestion") ? "active" : ""; ?>"><a href="index.php?page=gestion" style="font-size: 25px; font-weight:bold"><i class="material-icons">dashboard</i></a></li>
 
+                <li class="<?php echo ($page == "new_projet") ? "active" : ""; ?>"><a href="index.php?page=new_projet" style="font-size: 25px; font-weight:bold"><i class="material-icons">edit</i></a></li>
+
                 <li><a href="../index.php?page=home"><i class="material-icons">exit_to_app</i></a>
 
                 </li>
@@ -21,6 +23,7 @@
 
             <ul class="side-nav" id="mobile-menu">
                 <li class="<?php echo ($page == "gestion") ? "active" : ""; ?>"><a href="index.php?page=gestion">Gestion</a></li>
+                <li class="<?php echo ($page == "new_projet") ? "active" : ""; ?>"><a href="index.php?page=new_projet">Nouveau projet</a></li>
                 <li><a href="../index.php?page=home">Exit</a></li>
                 <li><a href="index.php?page=logout">Logout</a></li>
 

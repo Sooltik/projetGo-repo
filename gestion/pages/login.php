@@ -61,9 +61,12 @@ if (isset($_SESSION['admin'])) {
 
             <form method="POST">
                 <div class="row">
+
                     <div class="input-field col s12">
+                        <i class="material-icons">chat</i>
                         <input type="email" id="email" name="email" />
-                        <label for="email">Votre Email</label>
+
+                        <label for="email" style="margin-left: 30px;">Votre Email</label>
 
                     </div>
                     <div class="input-field col s12">
