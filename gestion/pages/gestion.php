@@ -55,40 +55,55 @@ $projets = getProjets();
     <tbody>
         <?php
         /*
+            vérifier s'il ya des projets qui ne sont pas encore validé par l'administrateur
+         */
+        if (!empty($projets)) {
+
+            /*
             On parcour le tableau projets ($projets)
         */
-        foreach ($projets as $projet) {
+            foreach ($projets as $projet) {
         ?>
-            <tr id="post_<?= $projet->id ?>">
-                <td><?= $projet->title ?></td>
-                <td><?= date("d/m/Y à H:i", strtotime($projet->date)); ?></td>
-                <td><?= $projet->name ?></td>
+                <tr id="post_<?= $projet->id ?>">
+                    <td><?= $projet->title ?></td>
+                    <td><?= date("d/m/Y à H:i", strtotime($projet->date)); ?></td>
+                    <td><?= $projet->name ?></td>
+                    <td>
+                        <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light green see_projet"><i class="material-icons">done</i></a>
+                        <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light red delete_projet"><i class="material-icons">delete</i></a>
+                        <a href="#projet_<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light blue modal-trigger"><i class="material-icons">more_vert</i></a>
+
+                        <!--Créer et afficher la modal-->
+                        <div class="modal" id="projet_<?= $projet->id ?>">
+                            <div class="modal-content">
+                                <!--Titre du projet-->
+                                <h4><?= $projet->title; ?></h4>
+                                <!--Celui qui a ajouté le projet-->
+                                <p>
+                                    Projet ajouté par <?= $projet->name . " (" . $projet->writer . ")</strong><br/>Le " . date("d/m/Y à H:i", strtotime($projet->date)) ?>
+                                </p>
+                                <hr />
+                                <p>
+                                    <?= substr(nl2br($projet->content), 0, 850) ?> ....
+                                </p>
+                            </div>
+                            <!--Le footer de la fenetre modal-->
+                            <div class="modal-footer">
+                                <a href="#" id="<?= $projet->id; ?>" class="modal-action modal-close waves-effect waves-green btn-flat see_projet"><i class="material-icons">done</i></a>
+
+                                <a href="#" id="<?= $projet->id; ?>" class="modal-action modal-close waves-effect waves-red btn-flat delete_projet"><i class="material-icons">delete</i></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            <?php
+            }
+        } else {
+            ?>
+            <tr>
+                <td></td>
                 <td>
-                    <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light green see_projet"><i class="material-icons">done</i></a>
-                    <a href="#" id="<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light red delete_projet"><i class="material-icons">delete</i></a>
-                    <a href="#projet_<?= $projet->id; ?>" class="btn-floating btn-small waves-effect waves-light blue modal-trigger"><i class="material-icons">more_vert</i></a>
-
-                    <!--Créer et afficher la modal-->
-                    <div class="modal" id="projet_<?= $projet->id ?>">
-                        <div class="modal-content">
-                            <!--Titre du projet-->
-                            <h4><?= $projet->title; ?></h4>
-                            <!--Celui qui a ajouté le projet-->
-                            <p>
-                                Projet ajouté par <?= $projet->name . " (" . $projet->writer . ")</strong><br/>Le " . date("d/m/Y à H:i", strtotime($projet->date)) ?>
-                            </p>
-                            <hr />
-                            <p>
-                                <?= substr(nl2br($projet->content), 0, 850) ?> ....
-                            </p>
-                        </div>
-                        <!--Le footer de la fenetre modal-->
-                        <div class="modal-footer">
-                            <a href="#" id="<?= $projet->id; ?>" class="modal-action modal-close waves-effect waves-green btn-flat see_projet"><i class="material-icons">done</i></a>
-
-                            <a href="#" id="<?= $projet->id; ?>" class="modal-action modal-close waves-effect waves-red btn-flat delete_projet"><i class="material-icons">delete</i></a>
-                        </div>
-                    </div>
+                    <center>Aucun projet à valider</center>
                 </td>
             </tr>
         <?php
