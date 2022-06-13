@@ -25,3 +25,18 @@ function getProjet()
     $result = $req->fetchObject();
     return $result;
 }
+
+function edit($title, $content, $posted, $id)
+{
+    global $db;
+    $edit = [
+        'title' => $title,
+        'content' => $content,
+        'posted' => $posted,
+        'id' => $id
+    ];
+
+    $sql = "UPDATE posts SET title=:title, content=:content, date=Now(), posted=:posted WHERE id=:id";
+    $req = $db->prepare($sql);
+    $req->execute($edit);
+}

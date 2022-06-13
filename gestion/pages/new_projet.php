@@ -61,7 +61,7 @@ if (isset($_POST['post'])) {
                 ?>
             </div>
         </div>
-<?php
+        <?php
     } else {  //S'il n y a pas d'erreur
         /*  
             Appelle à la fonction qui rajoute le titre, le contenu 
@@ -77,7 +77,13 @@ if (isset($_POST['post'])) {
             $id = $db->lastInsertId();
 
             //Rederiger l'utilisateur pour voir son projet publié
-            header("Location:index.php?page=post&id=" . $id);
+
+        ?>
+            <!--Redériger l'utilisateur pour consulter la modification réalisée sur le projet-->
+            <script>
+                window.location.replace("index.php?page=liste_projet&id=<?= $_GET['id'] ?>");
+            </script>
+<?php
         }
     }
 }
