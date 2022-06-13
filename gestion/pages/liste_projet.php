@@ -17,7 +17,7 @@ foreach ($posts as $post) {
                 <div class="col s12 m6 l4">
                     <img src="../img/posts/<?= $post->image ?>" class="materialboxed  responsive-img" " alt=" <?= $post->title; ?>" style="height: 280px;" />
                     <br /><br />
-                    <a class="btn  waves-effect waves-light" href="index.php?page=post&id=<?= $post->id ?>">Lire détail du projet...</a>
+                    <a class="btn  waves-effect waves-light" href="index.php?page=projet&id=<?= $post->id ?>"> Modifier le projet...</a>
                 </div>
                 <div class="col s12 m6 l8">
                     <h4>Bref détail du projet :</h4>
