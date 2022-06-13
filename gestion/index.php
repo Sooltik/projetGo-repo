@@ -80,8 +80,6 @@ if (in_array($page . '.func.php', $pages_functions)) {
     }
     ?>
 
-
-
 </body>
 
 </html>
