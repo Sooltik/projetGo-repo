@@ -14,6 +14,7 @@ if (isset($_POST['submit'])) {
     }
 
     //vérifier si l'adresse mail n'existe pas déja
+
     if (email_prise($email)) {
         $erreurs['prise'] = "L'adresse émail déja utilisée";
     }

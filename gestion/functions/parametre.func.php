@@ -1,6 +1,7 @@
 <?php
 
 //La fonction qui vérifiée si l'adresse émaiil est déja utilisée
+
 function email_prise($email)
 {
     global $db;
@@ -8,6 +9,7 @@ function email_prise($email)
     $tableau = [
 
         'email' => $email
+
     ];
 
     $sql = "SELECT * FROM admins WHERE email = : email";
@@ -24,7 +26,7 @@ function ajout_utilisateur($name, $email, $password, $role)
     $tabUtilisateur = [
         'name' => $name,
         'email' => $email,
-        'password' => md5($password),
+        'password' => sha1($password),
         'role' => $role
     ];
 
