@@ -1,6 +1,5 @@
 <?php
 
-require("../functions/parametre.func.php");
 
 //Vérifier si le boutton submit à été utilisé
 if (isset($_POST['submit'])) {
@@ -44,7 +43,7 @@ if (isset($_POST['submit'])) {
 
 <div class="row">
     <div class="col m12 s12">
-        <h4>Validation des utilisateurs</h4>
+        <h4>Validation des bénevols</h4>
         <table>
             <thead>
                 <tr>
