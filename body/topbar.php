@@ -8,18 +8,22 @@
       <ul class="right hide-on-med-and-down">
 
         <li class="<?php echo ($page == "home") ? "active" : ""; ?>">
-          <a href="index.php?page=home" style="font-size: 20px; font-weight:bold;">Home</a>
+          <a href="index.php?page=home" style="font-size: 15px; font-weight:bold;">Home</a>
         </li>
 
         <li class="<?php echo ($page == "projet") ? "active" : ""; ?>">
-          <a href="index.php?page=projet" style="font-size: 20px; font-weight:bold">
-            Projets</a>
+          <a href="index.php?page=projet" style="font-size: 15px; font-weight:bold">
+            Projects</a>
+        </li>
+
+        <li class="<?php echo ($page == "signup") ? "active" : ""; ?>">
+          <a href="gestion/index.php?page=signup" style="font-size: 15px; font-weight:bold">
+            Sign Up</a>
         </li>
 
         <li class="<?php echo ($page == "login") ? "active" : ""; ?>">
-          <a href="gestion/index.php?page=login" style="font-size: 25px; font-weight:bold">
-            <i class="material-icons">cast_connected</i></a>
-        </li>Connexion</a>
+          <a href="gestion/index.php?page=login" style="font-size: 15px; font-weight:bold">
+            Sign In</a>
         </li>
 
 
@@ -29,11 +33,8 @@
       <ul class="side-nav" id="mobile-menu">
         <li class="<?php echo ($page == "home") ? "active" : ""; ?>"><a href="index.php?page=home">Home</a></li>
         <li class="<?php echo ($page == "projet") ? "active" : ""; ?>"><a href="index.php?page=projet">Projets</a></li>
-        <li class="<?php echo ($page == "login") ? "active" : ""; ?>">
-          <a href="gestion/index.php?page=login" style="font-size: 25px; font-weight:bold">
-
-        </li>Connexion</a>
-        </li>
+        <li class="<?php echo ($page == "inscription") ? "active" : ""; ?>"><a href="gestion/index.php?page=inscription">Sign Up</a></li>
+        <li class="<?php echo ($page == "login") ? "active" : ""; ?>"><a href="gestion/index.php?page=login">Sign Ip</a></li>
       </ul>
 
     </div>

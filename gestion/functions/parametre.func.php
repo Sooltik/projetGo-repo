@@ -34,3 +34,18 @@ function ajout_utilisateur($name, $email, $password, $role)
     $req = $db->prepare($sql);
     $req->execute($tabUtilisateur);
 }
+
+//Fonction qui récupere les utilisateur et non les utilisateur
+function getBenevol()
+{
+    global $db;
+    $req = $db->query("
+        SELECT  * FROM admins WHERE role='benev';
+    ");
+
+    $result = [];
+    while ($rows = $req->fetchObject()) {
+        $result[] = $rows;
+    }
+    return $result;
+}

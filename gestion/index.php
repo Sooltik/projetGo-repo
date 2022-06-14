@@ -49,7 +49,7 @@ if (in_array($page . '.func.php', $pages_functions)) {
     <?php
 
     //si jamais la session n'est pas active et que la page est différente de login alors se rediriger vers la page login
-    if ($page != 'login' && !isset($_SESSION['admin'])) {
+    if ($page != 'login' && $page != 'signup' && !isset($_SESSION['admin'])) {
         header("Location:index.php?page=login");
     }
 

@@ -1,4 +1,7 @@
 <?php
+
+require("../functions/parametre.func.php");
+
 //Vérifier si le boutton submit à été utilisé
 if (isset($_POST['submit'])) {
     $name = htmlspecialchars(trim($_POST['name']));
@@ -15,9 +18,9 @@ if (isset($_POST['submit'])) {
 
     //vérifier si l'adresse mail n'existe pas déja
 
-    if (email_prise($email)) {
-        $erreurs['prise'] = "L'adresse émail déja utilisée";
-    }
+    //if (email_prise($name)) {
+    //   $erreurs['prise'] = "L'adresse émail déja utilisée";
+    // }
 
     if (!empty($erreurs)) { //s'il ya des erreurs
 ?>
@@ -40,45 +43,43 @@ if (isset($_POST['submit'])) {
 
 
 <div class="row">
+    <div class="col m12 s12">
+        <h4>Validation des utilisateurs</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Rôle</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $benevols = getBenevol();
+                foreach ($benevols as $benevol) {
+                ?>
+                    <tr>
+                        <td><?= $benevol->name ?></td>
+                        <td><?= $benevol->email ?></td>
+                        <td><?= $benevol->role ?></td>
+                        <td><i class="material-icons">
+                                <!--Vérifier que le béne est validé ou non par l'administrateur-->
+                                <?php
+                                echo ($benevol->valide == "1") ? "verified_user" : "av_timer";
+                                ?>
+                            </i></td>
+                    </tr>
 
-    <div class="col m6 s12">
-        <img src="../../img/insc.png" class="materialboxed  responsive-img" " alt=" image" style="height: 280px;" />
-        <br /><br />
-    </div>
-    <div class="col m6 s12">
-        <h4>Ajouter un utilisateur</h4>
-        <form method="POST">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons">chat</i>
-                    <input type="text" name="name" id="name" />
-                    <label for="name" style="margin-left: 30px;">Nom</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons">email</i>
-                    <input type="email" name="email" id="email" />
-                    <label for="email" style="margin-left: 30px;">Adresse Email</label>
-                </div>
-                <div class="input-field col s12">
-                    <i class="material-icons">visibility_off</i>
-                    <input type="password" name="password" id="password" />
-                    <label for="password" style="margin-left: 30px;">Mot de passe</label>
-                </div>
+                <?php
+                }
+                ?>
 
-                <div class="input-field col s12">
-                    <i class="material-icons">account_circle</i>
-                    <select name="role" id="role">
-                        <option value="admin">Administrateur</option>
-                        <option value="benev">Bénévol</option>
-                    </select>
-                    <label for="role" style="margin-left: 30px;">Rôle</label>
-                </div>
-                <div class="col s12">
-                    <button type="submit" name="submit" class="btn">Ajouter</button>
-                </div>
-            </div>
-        </form>
+            </tbody>
+        </table>
     </div>
+
+</div>
 </div>
 
 <!--Script qui fait apparaitre la liste déroulante de Rôle-->
