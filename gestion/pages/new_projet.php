@@ -1,3 +1,9 @@
+<?php
+if (admin() != 1) {
+    header("Location:index.php?page=gestion");
+}
+?>
+
 <h2>Ajouter un projet</h2>
 
 <?php

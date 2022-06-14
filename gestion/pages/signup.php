@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 <?php
     } else { //s'il n y a pas d'erreur
         ajout_utilisateur($name, $email, $password, $role);
-        header("location:index.php?page=login");
+        header("location:../index.php?page=login");
     }
 }
 ?>
@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
                     <input type="password" name="password" id="password" />
                     <label for="password" style="margin-left: 30px;">Mot de passe</label>
                 </div>
-
+                <!--
                 <div class="input-field col s12">
                     <i class="material-icons">account_circle</i>
                     <select name="role" id="role">
@@ -80,6 +80,7 @@ if (isset($_POST['submit'])) {
                     </select>
                     <label for="role" style="margin-left: 30px;">Fonction</label>
                 </div>
+                -->
                 <div class="col m6 s12">
                     <button type="submit" name="submit" class="btn">Ajouter</button>
                 </div>

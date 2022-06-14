@@ -2,6 +2,12 @@
 <hr />
 <?php
 
+
+if (admin() != 1) {
+    header("Location:index.php?page=gestion");
+}
+
+
 $posts = get_posts();
 foreach ($posts as $post) {
 ?>

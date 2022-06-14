@@ -6,12 +6,12 @@ function ajout_utilisateur($name, $email, $password, $role)
     $tabUtilisateur = [
         'name' => $name,
         'email' => $email,
-        'password' => sha1($password),
-        'role' => $role,
+        'password' => sha1($password)
+        //'role' => $role,
 
     ];
 
-    $sql = "INSERT INTO admins(name, email, password, role, valide) VALUES(:name, :email, :password, :role, '0')";
+    $sql = "INSERT INTO admins(name, email, password, role, valide) VALUES(:name, :email, :password, 'benev', '0')";
     $req = $db->prepare($sql);
     $req->execute($tabUtilisateur);
 }

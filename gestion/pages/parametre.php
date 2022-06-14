@@ -1,4 +1,10 @@
 <?php
+if (admin() != 1) {
+    header("Location:index.php?page=gestion");
+}
+?>
+
+<?php
 
 
 //Vérifier si le boutton submit à été utilisé
