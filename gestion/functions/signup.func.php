@@ -1,25 +1,20 @@
 <?php
 
-//La fonction qui vérifiée si l'adresse émaiil est déja utilisée
-
-function email_prise($email)
+function ajout_utilisateur($name, $email, $password, $role, $don)
 {
     global $db;
-
-    $tableau = [
-
-        'email' => $email
+    $tabUtilisateur = [
+        'name' => $name,
+        'email' => $email,
+        'password' => sha1($password),
+        'don' => $don
 
     ];
 
-    $sql = "SELECT * FROM admins WHERE email = : email";
-
+    $sql = "INSERT INTO admins(name, email, password, role, valide, don) VALUES(:name, :email, :password, 'benev', '0', :don)";
     $req = $db->prepare($sql);
-    $req->execute($tableau);
-    $result = $req->rowCount($sql);
-    return $result;
+    $req->execute($tabUtilisateur);
 }
-
 
 //Fonction qui récupere les utilisateur et non les utilisateur
 function getBenevol()
