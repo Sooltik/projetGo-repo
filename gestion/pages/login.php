@@ -19,7 +19,7 @@ if (isset($_SESSION['admin'])) {
         <div class="card-panel">
             <div class="row">
                 <div class="col s6 offset-s3">
-                    <img src="../img/admin.png" alt="administrateur" width="100%" />
+                    <img src="../img/admin.jpg" alt="administrateur" width="100%" />
                 </div>
             </div>
 

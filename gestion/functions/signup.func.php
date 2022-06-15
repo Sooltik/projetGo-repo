@@ -1,17 +1,17 @@
 <?php
 
-function ajout_utilisateur($name, $email, $password, $role)
+function ajout_utilisateur($name, $email, $password, $role, $don)
 {
     global $db;
     $tabUtilisateur = [
         'name' => $name,
         'email' => $email,
-        'password' => sha1($password)
-        //'role' => $role,
+        'password' => sha1($password),
+        'don' => $don
 
     ];
 
-    $sql = "INSERT INTO admins(name, email, password, role, valide) VALUES(:name, :email, :password, 'benev', '0')";
+    $sql = "INSERT INTO admins(name, email, password, role, valide, don) VALUES(:name, :email, :password, 'benev', '0', :don)";
     $req = $db->prepare($sql);
     $req->execute($tabUtilisateur);
 }
